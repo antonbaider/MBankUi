@@ -29,21 +29,23 @@
         </div>
       </div>
     </section>
-
-    <section
-        class="chart-section"
-        :style="{
+    <div class="transactions"><table>
+      <section
+          class="chart-section"
+          :style="{
     padding: '20px',
     maxWidth: '600px',
     margin: '40px auto',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    color: 'white',
     textAlign: 'center'
   }"
-    >
-      <LineChart :expenses="monthlyExpensesByCurrency" :deposits="recentDepositsByCurrency" />
-    </section>
+      >
+        <LineChart :expenses="monthlyExpensesByCurrency" :deposits="recentDepositsByCurrency" />
+
+      </section></table> <br> <br><br> </div>
 
     <section class="transactions">
       <table>
@@ -80,7 +82,7 @@
 import { ref, onMounted, computed } from 'vue';
 import api from '@/services/api.js';
 import Chart from 'chart.js/auto';
-import LineChart from '@/components/LineChart.vue';
+import LineChart from "@/components/LineChart.vue";
 
 export default {
   name: 'Dashboard',
